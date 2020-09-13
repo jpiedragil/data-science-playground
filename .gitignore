@@ -137,3 +137,9 @@ jpiedragil-bookmarks.txt
 
 # Jupyter Notebooks / Lab
 .virtual_documents/
+
+# Images
+*.png
+
+# JSON Files
+*.json
