@@ -133,3 +133,7 @@ dmypy.json
 
 # Some text files
 codebook.txt
+jpiedragil-bookmarks.txt
+
+# Jupyter Notebooks / Lab
+.virtual_documents/
