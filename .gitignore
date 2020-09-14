@@ -143,3 +143,6 @@ jpiedragil-bookmarks.txt
 
 # JSON Files
 *.json
+
+# Excel files
+*.xlsx
