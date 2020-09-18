@@ -146,3 +146,6 @@ jpiedragil-bookmarks.txt
 
 # Excel files
 *.xlsx
+
+#SQLite database files
+*.db
