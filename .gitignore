@@ -149,3 +149,6 @@ jpiedragil-bookmarks.txt
 
 #SQLite database files
 *.db
+
+# Some html files
+example_map.html
