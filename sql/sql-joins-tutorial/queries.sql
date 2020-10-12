@@ -157,3 +157,75 @@ INNER JOIN
     ) As c ON c.facts_id = f.id
 ORDER BY
   3 DESC;
+-- SQL Challenge: Complex Query with Joins and Subqueries
+-- Find the countries where the urban center (city) population is more than half of the country’s total population.
+--
+SELECT
+  facts_id,
+  SUM(population) AS urban_pop
+FROM
+  cities
+GROUP BY
+  1
+LIMIT 5;
+
+SELECT
+  f.name AS country,
+  c.urban_pop,
+  f.population AS total_pop
+FROM
+  facts AS f
+INNER JOIN
+  (
+    SELECT
+      facts_id,
+      SUM(population) AS urban_pop
+    FROM
+      cities
+    GROUP BY
+      1
+  ) AS c ON c.facts_id = f.id
+LIMIT
+  5;
+
+SELECT
+  f.name AS country,
+  c.urban_pop,
+  f.population AS total_pop,
+  CAST (c.urban_pop AS REAL)  / f.population AS urban_pct
+FROM
+  facts AS f
+INNER JOIN
+  (
+    SELECT
+      facts_id,
+      SUM(population) AS urban_pop
+    FROM
+      cities
+    GROUP BY
+      1
+  ) AS c ON c.facts_id = f.id
+LIMIT
+  5;
+
+SELECT
+  f.name AS country,
+  c.urban_pop,
+  f.population AS total_pop,
+  CAST (c.urban_pop AS REAL)  / f.population AS urban_pct
+FROM
+  facts AS f
+INNER JOIN
+  (
+    SELECT
+      facts_id,
+      SUM(population) AS urban_pop
+    FROM
+      cities
+    GROUP BY
+      1
+  ) AS c ON c.facts_id = f.id
+WHERE
+  urban_pct > 0.5
+LIMIT
+  5;
