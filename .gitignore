@@ -152,3 +152,6 @@ jpiedragil-bookmarks.txt
 
 # Some html files
 example_map.html
+
+# Zip files
+*.zip
