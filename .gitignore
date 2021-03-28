@@ -155,3 +155,6 @@ example_map.html
 
 # Zip files
 *.zip
+
+# Example data files
+hs_aws_costos
